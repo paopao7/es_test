@@ -10,6 +10,8 @@ public class EsClient {
         RestHighLevelClient esClient = new RestHighLevelClient(
                 RestClient.builder(new HttpHost("localhost", 9200, "http"))
         );
+
+        //关闭es客户端
         esClient.close();
     }
 }
