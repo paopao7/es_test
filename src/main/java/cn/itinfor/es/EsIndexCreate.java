@@ -7,7 +7,10 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.client.indices.CreateIndexResponse;
 
-public class Es_index_create {
+/**
+ * 索引创建
+ */
+public class EsIndexCreate {
     public static void main(String[] args) throws Exception {
         //创建es客户端
         RestHighLevelClient esClient = new RestHighLevelClient(
