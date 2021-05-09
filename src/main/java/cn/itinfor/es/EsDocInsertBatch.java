@@ -23,11 +23,12 @@ public class EsDocInsertBatch {
 
         BulkRequest request = new BulkRequest();
 
-        request.add(new IndexRequest().index("user").id("1001") .source(XContentType.JSON,"name", "张三"));
-        request.add(new IndexRequest().index("user").id("1002") .source(XContentType.JSON,"name", "李四"));
-        request.add(new IndexRequest().index("user").id("1003") .source(XContentType.JSON,"name", "王五"));
-        request.add(new IndexRequest().index("user").id("1004") .source(XContentType.JSON,"name", "赵六"));
-        request.add(new IndexRequest().index("user").id("1005") .source(XContentType.JSON,"name", "王二麻子"));
+        request.add(new IndexRequest().index("user").id("1001").source(XContentType.JSON, "name", "zhangsan", "age", 30, "sex", "男"));
+        request.add(new IndexRequest().index("user").id("1002").source(XContentType.JSON, "name", "lisi", "age", 30, "sex", "女"));
+        request.add(new IndexRequest().index("user").id("1003").source(XContentType.JSON, "name", "wangwu", "age", 40, "sex", "男"));
+        request.add(new IndexRequest().index("user").id("1004").source(XContentType.JSON, "name", "wangwu1", "age", 40, "sex", "女"));
+        request.add(new IndexRequest().index("user").id("1005").source(XContentType.JSON, "name", "wangwu2", "age", 50, "sex", "男"));
+        request.add(new IndexRequest().index("user").id("1005").source(XContentType.JSON, "name", "wangwu3", "age", 60, "sex", "男"));
 
         BulkResponse response = esClient.bulk(request, RequestOptions.DEFAULT);
 
